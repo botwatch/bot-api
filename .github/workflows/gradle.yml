@@ -17,6 +17,4 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-    - name: action-maven
-      uses: comchangs/action-maven@v0.4-beta
 
