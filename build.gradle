@@ -12,7 +12,8 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.30'
+    compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.7.1'
+    compile group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.7.1'
 
 }
 
