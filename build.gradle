@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+task "create-dirs" {
+    sourceSets*.java.srcDirs*.each { it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.30'
+
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+version = '1.2.1'
