@@ -1,5 +1,6 @@
 package ch.botwat;
 
+import ch.botwat.data.User;
 import ch.botwat.service.UserService;
 import retrofit2.Call;
 import retrofit2.Response;

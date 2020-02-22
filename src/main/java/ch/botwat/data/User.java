@@ -1,4 +1,4 @@
-package ch.botwat;
+package ch.botwat.data;
 
 public class User {
     public int id;
