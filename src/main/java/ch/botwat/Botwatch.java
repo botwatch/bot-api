@@ -14,12 +14,12 @@ public class Botwatch {
 
     public static void main(String[] args) throws IOException {
         new Thread(() -> {
-            User me = Users.create("MyTest22", "MyTest2@google.com", "MyTest123");
+            User me = Users.create("testacc122", "testacc122@google.com", "MyTest123");
 
-            BotClient client = Clients.create("MYTestClient22", "Tests shit", "test.com", "swipe,qosmiof2");
+            BotClient client = Clients.create("testc122", "Tests shit", "test.com", "swipe,qosmiof2");
 
-            OldSchoolAccount acc1 = Accounts.create("TestAccount122");
-            OldSchoolAccount acc2 = Accounts.create("TestAccount222");
+            OldSchoolAccount acc1 = Accounts.create("testacc1122");
+            OldSchoolAccount acc2 = Accounts.create("testacc2212");
 
             Session s1 = Sessions.create(client.name, acc1.alias);
             Session s2 = Sessions.create(client.name, acc2.alias);
