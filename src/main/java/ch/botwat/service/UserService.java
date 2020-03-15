@@ -1,17 +1,18 @@
 package ch.botwat.service;
 
-import ch.botwat.dto.user.UserAuthenticateRequest;
-import ch.botwat.dto.user.UserAuthenticateResponse;
-import ch.botwat.dto.user.UserCreateRequest;
-import ch.botwat.dto.user.UserCreateResponse;
+import ch.botwat.data.User;
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
+import retrofit2.http.QueryName;
 
 public interface UserService {
     @POST("user/create")
-    Call<UserCreateRequest> create(@Body UserCreateResponse user);
+    Call<User> create(@Query("name") String name, @Query("email") String email, @Query("password") String password);
 
     @POST("user/authenticate")
-    Call<UserAuthenticateRequest> authenticate(@Body UserAuthenticateResponse user);
+    Call<User> authenticate(@Query("name")String name, @Query("password")String password);
+
+    @POST("user/login")
+    Call<User> login(@Query("name")String name, @Query("token")String token);
 }

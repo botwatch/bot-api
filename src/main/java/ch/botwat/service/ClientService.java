@@ -1,12 +1,18 @@
 package ch.botwat.service;
 
 import ch.botwat.data.BotClient;
-import ch.botwat.dto.client.BotClientCreateRequest;
+import ch.botwat.data.User;
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.POST;
+import retrofit2.http.*;
 
 public interface ClientService {
-    @POST("user/create")
-    Call<BotClient> create(@Body BotClientCreateRequest client);
+
+    @POST("client/create")
+    Call<BotClient> create(
+            @Header("Authorization") String token,
+            @Query("name") String name,
+            @Query("description") String description,
+            @Query("url") String url,
+            @Query("authors") String authors
+    );
 }
