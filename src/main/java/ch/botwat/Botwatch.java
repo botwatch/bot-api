@@ -14,12 +14,13 @@ public class Botwatch {
 
     public static void main(String[] args) throws IOException {
         new Thread(() -> {
-            User me = Users.create("testacc122", "testacc122@google.com", "MyTest123");
+            int times = 0;
+            User me = Users.create("testacc", "testacc@google.com", "MyTest123");
 
-            BotClient client = Clients.create("testc122", "Tests shit", "test.com", "swipe,qosmiof2");
+            BotClient client = Clients.create("test", "Tests shit", "test.com", "swipe,qosmiof2");
 
-            OldSchoolAccount acc1 = Accounts.create("testacc1122");
-            OldSchoolAccount acc2 = Accounts.create("testacc2212");
+            OldSchoolAccount acc1 = Accounts.create("testacc");
+            OldSchoolAccount acc2 = Accounts.create("testacc2");
 
             Session s1 = Sessions.create(client.name, acc1.alias);
             Session s2 = Sessions.create(client.name, acc2.alias);
@@ -30,20 +31,26 @@ public class Botwatch {
             while (true) {
                 switch (random.nextInt(30)) {
                     case 0:
-                        Interactions.create(69, 69, 69, 69, 69, 69, 69, 69, s1.id);
+                        Interactions.create(random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), s1.id);
                         System.out.println("interaction - s1");
                         break;
                     case 1:
-                        Interactions.create(69, 69, 69, 69, 69, 69, 69, 69, s2.id);
+                        Interactions.create(random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), s2.id);
                         System.out.println("interaction - s2");
                         break;
                     case 2:
-                        s1 = Sessions.create(client.name, acc1.alias);
-                        System.out.println("session 1 redone");
+                        if(times > 1200) {
+                            s1 = Sessions.create(client.name, acc1.alias);
+                            System.out.println("session 1 redone");
+                            times =0;
+                        }
                         break;
                     case 3:
-                        s2 = Sessions.create(client.name, acc2.alias);
-                        System.out.println("session 2 redone");
+                        if(times > 1200) {
+                            s2 = Sessions.create(client.name, acc2.alias);
+                            System.out.println("session 2 redone");
+                            times =0;
+                        }
                         break;
                     case 4:
                         Experiences.create(random.nextInt(20), random.nextInt(100), s1.id);
@@ -56,6 +63,7 @@ public class Botwatch {
                 }
                 try {
                     Thread.sleep(1000);
+                    times++;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
