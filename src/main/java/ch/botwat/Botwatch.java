@@ -31,25 +31,31 @@ public class Botwatch {
             while (true) {
                 switch (random.nextInt(30)) {
                     case 0:
-                        Interactions.create(random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), s1.id);
+                        Interactions.create(random.nextInt(600), random.nextInt(600),
+                                random.nextInt(600), random.nextInt(600), random.nextInt(600),
+                                random.nextInt(600), random.nextInt(600), random.nextInt(600),
+                                random.nextInt(5000), random.nextInt(5000), s1.id);
                         System.out.println("interaction - s1");
                         break;
                     case 1:
-                        Interactions.create(random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), random.nextInt(600), s2.id);
+                        Interactions.create(random.nextInt(600), random.nextInt(600),
+                                random.nextInt(600), random.nextInt(600), random.nextInt(600),
+                                random.nextInt(600), random.nextInt(600), random.nextInt(600),
+                                random.nextInt(5000), random.nextInt(5000), s2.id);
                         System.out.println("interaction - s2");
                         break;
                     case 2:
-                        if(times > 1200) {
+                        if (times > 1200) {
                             s1 = Sessions.create(client.name, acc1.alias);
                             System.out.println("session 1 redone");
-                            times =0;
+                            times = 0;
                         }
                         break;
                     case 3:
-                        if(times > 1200) {
+                        if (times > 1200) {
                             s2 = Sessions.create(client.name, acc2.alias);
                             System.out.println("session 2 redone");
-                            times =0;
+                            times = 0;
                         }
                         break;
                     case 4:
