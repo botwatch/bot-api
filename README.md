@@ -33,6 +33,6 @@ A superiorly crafted java 8 library for interfacing with the botwatch backend se
 - Session Id must be provided and active.
 ## Interaction
 #### Creation
-```Interactions.create(int param1, int param2, int param3, int identifier, int menuOption, int menuTarget, int mouseX, int mouseY, session.id);```
+```Interactions.create(int param1, int param2, int param3, int identifier, int menuOption, int menuTarget, int mouseX, int mouseY, int locationX, int locationY, session.id);```
 - To be explained later...
 - Session Id must be provided and active.
