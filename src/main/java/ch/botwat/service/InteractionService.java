@@ -18,6 +18,8 @@ public interface InteractionService {
             @Query("menuTarget") int menuTarget,
             @Query("mouseX") int mouseX,
             @Query("mouseY") int mouseY,
+            @Query("locationX") int locationX,
+            @Query("locationY") int locationY,
             @Query("sessionId") int sessionId
     );
 }

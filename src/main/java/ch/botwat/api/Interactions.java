@@ -24,10 +24,10 @@ public class Interactions extends ApiBase {
      * @return A Interaction object from the server response, or null if there were any issues in transmission.
      */
     public static Interaction create(int param1, int param2, int param3, int identifier, int menuOption,
-                                     int menuTarget, int mouseX, int mouseY, int sessionId) {
+                                     int menuTarget, int mouseX, int mouseY,int locationX, int locationY, int sessionId) {
         try {
             Call<Interaction> call = service.create(Utilities.tokenize(user), param1, param2, param3, identifier,
-                    menuOption, menuTarget, mouseX, mouseY, sessionId);
+                    menuOption, menuTarget, mouseX, mouseY, locationX, locationY, sessionId);
             Response<Interaction> response = call.execute();
             if (response.isSuccessful()) {
                 return response.body();

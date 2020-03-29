@@ -10,5 +10,7 @@ public class Interaction {
     public int menuTarget;
     public int mouseX;
     public int mouseY;
+    public int locationX;
+    public int locationY;
     public int sessionId;
 }

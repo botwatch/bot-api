@@ -7,7 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiBase {
-    protected static final String endpoint = "https://botwat.ch/";
+    protected static final String endpoint = "http://localhost";//"https://botwat.ch/";
     protected static User user;
     protected static Retrofit retrofit;
 
