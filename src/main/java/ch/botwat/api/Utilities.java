@@ -8,6 +8,6 @@ public class Utilities {
     }
 
     public static String tokenize(User user) {
-        return tokenize(user.token);
+        return user == null ? null : tokenize(user.token);
     }
 }

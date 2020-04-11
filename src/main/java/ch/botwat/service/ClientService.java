@@ -6,7 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.*;
 
 public interface ClientService {
-
     @POST("client/create")
     Call<BotClient> create(
             @Header("Authorization") String token,
@@ -14,5 +13,10 @@ public interface ClientService {
             @Query("description") String description,
             @Query("url") String url,
             @Query("authors") String authors
+    );
+
+    @POST("client/get")
+    Call<BotClient> get(@Header("Authorization") String token,
+                   @Query("clientName") String clientName
     );
 }

@@ -16,11 +16,24 @@ public class Botwatch {
         new Thread(() -> {
             int times = 0;
             User me = Users.create("testacc", "testacc@google.com", "MyTest123");
+            //login if account already exists
+            if(me == null) me = Users.authenticate("testacc","MyTest123");
+            BotClient client = Clients.create("testxD123", "Tests shit", "test43.com", "swipe,qosmiof2");
+            if(client == null){
+                client = new BotClient();
+                client.name = "testxD123";
+            }
 
-            BotClient client = Clients.create("test", "Tests shit", "test.com", "swipe,qosmiof2");
-
-            OldSchoolAccount acc1 = Accounts.create("testacc");
-            OldSchoolAccount acc2 = Accounts.create("testacc2");
+            OldSchoolAccount acc1 = Accounts.create("abc");
+            if(acc1 == null){
+                acc1 = new OldSchoolAccount();
+                acc1.alias = "abc";
+            }
+            OldSchoolAccount acc2 = Accounts.create("efg");
+            if(acc2 == null){
+                acc2 = new OldSchoolAccount();
+                acc2.alias = "efg";
+            }
 
             Session s1 = Sessions.create(client.name, acc1.alias);
             Session s2 = Sessions.create(client.name, acc2.alias);
@@ -59,16 +72,16 @@ public class Botwatch {
                         }
                         break;
                     case 4:
-                        Experiences.create(random.nextInt(20), random.nextInt(100), s1.id);
+                        Experiences.create(random.nextInt(2000), random.nextInt(3000), s1.id);
                         System.out.println("exp - s1");
                         break;
                     case 5:
-                        Experiences.create(random.nextInt(20), random.nextInt(100), s2.id);
+                        Experiences.create(random.nextInt(2000), random.nextInt(3000), s2.id);
                         System.out.println("exp - s2");
                         break;
                 }
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                     times++;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
